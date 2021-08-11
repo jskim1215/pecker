@@ -2,31 +2,28 @@ import { dbService } from "fbase";
 import React, { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import TodoListTable from "./TodoListTable";
-import Timer from "components/Timer";
 
-const Todo = ({ userObj }) => {
+const Todo = ({ todoLists, userObj }) => {
   const [filterTarget, setFilterTarget] = useState("");
-  const [todoLists, setTodoLists] = useState([]);
-  const [todoListMenu, setTodoListMenu] = useState([]);
+  const [sortTodo, setSortTodo] = useState(todoLists);
 
   useEffect(() => {
-    if (filterTarget === "") {
+    if (filterTarget !== "") {
+      const filteredTodoLists = todoLists.filter(
+        (todoList) => todoList.subject === filterTarget
+      );
+      setSortTodo(filteredTodoLists);
+    } else {
       dbService
         .collection(`${userObj.uid}`)
         .orderBy("createdAt", "desc")
         .onSnapshot((snapshot) => {
-          const todoArray = snapshot.docs.map((doc) => ({
+          const todoArray_a = snapshot.docs.map((doc) => ({
             id: doc.id,
             ...doc.data(),
           }));
-          setTodoListMenu(todoArray);
-          setTodoLists(todoArray);
+          setSortTodo(todoArray_a);
         });
-    } else {
-      const filteredTodoLists = todoListMenu.filter(
-        (todoList) => todoList.subject === filterTarget
-      );
-      setTodoLists(filteredTodoLists);
     }
   }, [filterTarget]);
 
@@ -40,7 +37,7 @@ const Todo = ({ userObj }) => {
   const unfilter = (event) => {
     setFilterTarget("");
   };
-  const subjectArray = todoListMenu.map((todo) => {
+  const subjectArray = todoLists.map((todo) => {
     baseArray.push(todo.subject);
   });
   const targetSubject = [...new Set(baseArray)];
@@ -72,7 +69,7 @@ const Todo = ({ userObj }) => {
             </tr>
           </thead>
           <>
-            {todoLists.map((todoList) => (
+            {sortTodo.map((todoList) => (
               <TodoListTable
                 userObj={userObj}
                 key={todoList.id}
