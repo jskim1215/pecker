@@ -5,6 +5,7 @@ const TodoListAssign = ({ userObj }) => {
   const [work, setWork] = useState("");
   const [subject, setSubject] = useState("");
   const [format, setFormat] = useState("");
+  const [date, setDate] = useState();
 
   const onChange = (event) => {
     const {
@@ -16,6 +17,8 @@ const TodoListAssign = ({ userObj }) => {
       setSubject(value);
     } else if (name === "format") {
       setFormat(value);
+    } else if (name === "date") {
+      setDate(value);
     }
   };
   const onSubmit = async (event) => {
@@ -24,6 +27,7 @@ const TodoListAssign = ({ userObj }) => {
       work: work,
       subject: subject,
       format: format,
+      duedate: date,
       createdAt: Date.now(),
       creatorId: userObj.uid,
       studyTime: 0,
@@ -32,6 +36,7 @@ const TodoListAssign = ({ userObj }) => {
     setWork("");
     setSubject("");
     setFormat("");
+    setDate();
   };
   return (
     <form onSubmit={onSubmit}>
@@ -59,6 +64,8 @@ const TodoListAssign = ({ userObj }) => {
         onChange={onChange}
         required
       />
+      <span>마감일(DueDate) : </span>
+      <input name="date" type="date" onChange={onChange} required />
       <input type="submit" value="Submit" />
     </form>
   );

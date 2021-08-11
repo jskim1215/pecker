@@ -7,7 +7,7 @@ import Timer from "components/Timer";
 const Todo = ({ userObj }) => {
   const [filterTarget, setFilterTarget] = useState("");
   const [todoLists, setTodoLists] = useState([]);
-  const [firstTodoList, setFirstTodoList] = useState([]);
+  const [todoListMenu, setTodoListMenu] = useState([]);
 
   useEffect(() => {
     if (filterTarget === "") {
@@ -19,11 +19,11 @@ const Todo = ({ userObj }) => {
             id: doc.id,
             ...doc.data(),
           }));
-          setFirstTodoList(todoArray);
+          setTodoListMenu(todoArray);
           setTodoLists(todoArray);
         });
     } else {
-      const filteredTodoLists = firstTodoList.filter(
+      const filteredTodoLists = todoListMenu.filter(
         (todoList) => todoList.subject === filterTarget
       );
       setTodoLists(filteredTodoLists);
@@ -40,7 +40,7 @@ const Todo = ({ userObj }) => {
   const unfilter = (event) => {
     setFilterTarget("");
   };
-  const subjectArray = firstTodoList.map((todo) => {
+  const subjectArray = todoListMenu.map((todo) => {
     baseArray.push(todo.subject);
   });
   const targetSubject = [...new Set(baseArray)];
@@ -67,7 +67,8 @@ const Todo = ({ userObj }) => {
               <th>Task</th>
               <th>Subject</th>
               <th>Format</th>
-              <th>Total Time</th>
+              <th>D-Day</th>
+              <th>Study Time</th>
             </tr>
           </thead>
           <>
@@ -80,9 +81,6 @@ const Todo = ({ userObj }) => {
             ))}
           </>
         </table>
-      </div>
-      <div>
-        <Timer userObj={userObj} todoLists={todoLists} />
       </div>
     </>
   );

@@ -76,7 +76,8 @@ const Timer = ({ userObj, todoLists }) => {
     const addedItem = todoLists.filter(
       (todoList) => todoList.createdAt === parseInt(selectedTodo)
     );
-    if (addedItem.length === 1) {
+    const confirmAdd = window.confirm("해당 작업에 시간을 추가하시겠습니까?");
+    if (addedItem.length === 1 && confirmAdd) {
       const beforeAddedItem = await dbService
         .doc(`${userObj.uid}/${addedItem[0].id}`)
         .get();

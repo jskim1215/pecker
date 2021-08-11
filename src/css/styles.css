@@ -1,0 +1,11 @@
+input {
+  box-sizing: border-box;
+  appearance: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+}

@@ -5,6 +5,7 @@ import { authService, dbService } from "fbase";
 function App() {
   const [studyMode, setStudyMode] = useState(null);
   const [timerMode, setTimerMode] = useState(null);
+  const [modeObj, setModeObj] = useState(null);
   const [init, setInit] = useState(false);
   const [userObj, setUserObj] = useState(null);
   useEffect(() => {
@@ -15,9 +16,8 @@ function App() {
           displayName: user.displayName,
           uid: user.uid,
           updateProfile: (args) => user.updateProfile(args),
-          studymode: studyMode,
-          timermode: timerMode,
         });
+        setModeObj({ studymode: studyMode, timermode: timerMode });
       } else {
         setUserObj(null);
       }
@@ -26,11 +26,13 @@ function App() {
   }, []);
   const refreshUser = () => {
     const user = authService.currentUser;
+    getcurrentMode(user.uid);
     setUserObj({
       displayName: user.displayName,
       uid: user.uid,
       updateProfile: (args) => user.updateProfile(args),
     });
+    setModeObj({ studymode: studyMode, timermode: timerMode });
   };
 
   const getcurrentMode = async (uid) => {
@@ -51,14 +53,14 @@ function App() {
         }
       });
     }
+    console.log();
   };
-
-  const pageMode = () => {};
 
   return (
     <>
       {init ? (
         <AppRouter
+          modeObj={modeObj}
           refreshUser={refreshUser}
           isLoggedIn={Boolean(userObj)}
           userObj={userObj}

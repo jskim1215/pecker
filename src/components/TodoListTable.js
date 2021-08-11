@@ -6,6 +6,7 @@ const TodoListTable = ({ userObj, todoObj }) => {
   const [newWork, setNewWork] = useState(todoObj.work);
   const [newSubject, setNewSubject] = useState(todoObj.subject);
   const [newFormat, setNewFormat] = useState(todoObj.format);
+  const [newDate, setNewDate] = useState(todoObj.duedate);
 
   const [convertTime, setConvertTime] = useState("00:00:00");
   function secondsToHhMmSs(inputTime) {
@@ -43,13 +44,20 @@ const TodoListTable = ({ userObj, todoObj }) => {
       setNewSubject(value);
     } else if (name === "format") {
       setNewFormat(value);
+    } else if (name === "date") {
+      setNewDate(value);
     }
   };
   const onSubmit = async (event) => {
     event.preventDefault();
     await dbService
       .doc(`${userObj.uid}/${todoObj.id}`)
-      .update({ work: newWork, subject: newSubject, format: newFormat });
+      .update({
+        work: newWork,
+        subject: newSubject,
+        format: newFormat,
+        duedate: newDate,
+      });
     setEditing(false);
   };
   return (
@@ -86,6 +94,15 @@ const TodoListTable = ({ userObj, todoObj }) => {
               required
             />
           </td>
+          <td>
+            <input
+              name="date"
+              value={newDate}
+              type="date"
+              onChange={onChange}
+              required
+            />
+          </td>
           <td>{convertTime}</td>
           <td>
             <button onClick={onSubmit}>Update</button>
@@ -100,6 +117,7 @@ const TodoListTable = ({ userObj, todoObj }) => {
             <td>{todoObj.work}</td>
             <td>{todoObj.subject}</td>
             <td>{todoObj.format}</td>
+            <td>{todoObj.duedate}</td>
             <td>{convertTime}</td>
             <td>
               <button onClick={onDeleteClick}>Delete</button>
