@@ -1,0 +1,62 @@
+input {
+  width: 100px;
+}
+
+.home-container {
+  display: flex;
+  justify-content: center;
+  flex-flow: row-reverse wrap;
+  margin-top: 60px;
+}
+
+.first-inner-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.second-inner-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.first-box-container {
+  background-color: rgb(42, 98, 255, 0.5);
+  height: 310px;
+  padding: 30px;
+  width: 340px;
+  border-radius: 20px;
+  box-shadow: 3px 3px #000;
+}
+
+.second-box-container {
+  background-color: rgb(42, 98, 255, 0.5);
+  margin-top: 40px;
+  height: 220px;
+  padding: 30px;
+  width: 340px;
+  border-radius: 20px;
+  box-shadow: 3px 3px #000;
+}
+
+.third-box-container {
+  background-color: rgb(42, 98, 255, 0.5);
+  height: 420px;
+  width: 740px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 20px;
+  box-shadow: 3px 3px #000;
+}
+
+.fourth-box-container {
+  margin-top: 40px;
+  background-color: rgb(42, 98, 255, 0.5);
+  height: 110px;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 3px 3px #000;
+}

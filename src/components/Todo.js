@@ -2,6 +2,7 @@ import { dbService } from "fbase";
 import React, { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import TodoListTable from "./TodoListTable";
+import "../css/Todo.css";
 
 const Todo = ({ todoLists, userObj }) => {
   const [filterTarget, setFilterTarget] = useState("");
@@ -51,33 +52,42 @@ const Todo = ({ todoLists, userObj }) => {
   return (
     <>
       <div>
-        <h1>Todo List</h1>
-        <button onClick={unfilter}>전체</button>
-        {filterArray.map((doc) => (
-          <button onClick={onClick} key={doc.id}>
-            {doc.subject}
+        <h1 className="todo-title">Todo List</h1>
+        <div className="todo-filter-div">
+          <button className="todo-filter-btn" onClick={unfilter}>
+            전체
           </button>
-        ))}
-        <table>
-          <thead>
-            <tr>
-              <th>Task</th>
-              <th>Subject</th>
-              <th>Format</th>
-              <th>D-Day</th>
-              <th>Study Time</th>
-            </tr>
-          </thead>
-          <>
-            {sortTodo.map((todoList) => (
-              <TodoListTable
-                userObj={userObj}
-                key={todoList.id}
-                todoObj={todoList}
-              />
-            ))}
-          </>
-        </table>
+          {filterArray.map((doc) => (
+            <button className="todo-filter-btn" onClick={onClick} key={doc.id}>
+              {doc.subject}
+            </button>
+          ))}
+        </div>
+        <div className="todolists-table-container">
+          <table className="todolist-table">
+            <thead className="todolist-thead fixedHeader">
+              <tr>
+                <th className="todolist-task-column">할 일</th>
+                <th className="todolist-category-column">카테고리</th>
+                <th className="todolist-format-column">형식</th>
+                <th className="todolist-due-column">마감일</th>
+                <th className="todolist-studytime-column">소요 시간</th>
+                <th colSpan="3" className="todolist-button-column">
+                  Buttons
+                </th>
+              </tr>
+            </thead>
+            <>
+              {sortTodo.map((todoList) => (
+                <TodoListTable
+                  userObj={userObj}
+                  key={todoList.id}
+                  todoObj={todoList}
+                />
+              ))}
+            </>
+          </table>
+        </div>
       </div>
     </>
   );

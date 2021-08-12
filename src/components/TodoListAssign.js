@@ -1,11 +1,14 @@
 import { dbService } from "fbase";
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlusSquare } from "@fortawesome/free-regular-svg-icons";
+import "../css/TodoListAssign.css";
 
 const TodoListAssign = ({ userObj }) => {
   const [work, setWork] = useState("");
   const [subject, setSubject] = useState("");
   const [format, setFormat] = useState("");
-  const [date, setDate] = useState();
+  const [date, setDate] = useState("");
 
   const onChange = (event) => {
     const {
@@ -36,37 +39,68 @@ const TodoListAssign = ({ userObj }) => {
     setWork("");
     setSubject("");
     setFormat("");
-    setDate();
   };
   return (
-    <form onSubmit={onSubmit}>
-      <input
-        name="work"
-        value={work}
-        type="text"
-        placeholder="Write What ToDo"
-        onChange={onChange}
-        required
-      />
-      <input
-        name="subject"
-        value={subject}
-        type="text"
-        placeholder="Subject of Todo"
-        onChange={onChange}
-        required
-      />
-      <input
-        name="format"
-        value={format}
-        type="text"
-        placeholder="Format of Todo"
-        onChange={onChange}
-        required
-      />
-      <span>마감일(DueDate) : </span>
-      <input name="date" type="date" onChange={onChange} required />
-      <input type="submit" value="Submit" />
+    <form className="todo-form-container" onSubmit={onSubmit}>
+      <table className="todo-assign-table">
+        <tr className="todo-assign-row">
+          <td className="todo-assign-column">Task</td>
+          <td>
+            <input
+              className="todo-assign-input"
+              name="work"
+              value={work}
+              type="text"
+              placeholder="Task"
+              onChange={onChange}
+              required
+            />
+          </td>
+        </tr>
+        <tr className="todo-assign-row">
+          <td className="todo-assign-column">Category</td>
+          <td>
+            <input
+              className="todo-assign-input"
+              name="subject"
+              value={subject}
+              type="text"
+              placeholder="Category"
+              onChange={onChange}
+              required
+            />
+          </td>
+        </tr>
+        <tr className="todo-assign-row">
+          <td className="todo-assign-column">Format</td>
+          <td>
+            <input
+              className="todo-assign-input"
+              name="format"
+              value={format}
+              type="text"
+              placeholder="Format"
+              onChange={onChange}
+              required
+            />
+          </td>
+        </tr>
+        <tr className="todo-assign-row">
+          <td className="todo-assign-column">DueDate</td>
+          <td>
+            <input
+              className="todo-assign-input"
+              name="date"
+              type="date"
+              onChange={onChange}
+              required
+            />
+          </td>
+        </tr>
+      </table>
+      <button className="todo-assign-submit-btn" onSubmit={onSubmit}>
+        <FontAwesomeIcon icon={faPlusSquare} /> 추가하기
+      </button>
     </form>
   );
 };

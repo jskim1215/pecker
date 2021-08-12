@@ -1,5 +1,14 @@
 import { dbService } from "fbase";
 import React, { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faClipboardCheck,
+  faEdit,
+  faTrash,
+  faBan,
+  faCheckCircle,
+} from "@fortawesome/free-solid-svg-icons";
+import "../css/TodoListTable.css";
 
 const TodoListTable = ({ userObj, todoObj }) => {
   const [editing, setEditing] = useState(false);
@@ -21,6 +30,12 @@ const TodoListTable = ({ userObj, todoObj }) => {
     );
     const HhMmSs = hours + ":" + minutes + ":" + seconds;
     return HhMmSs;
+  }
+
+  function deleteYear(inputDateString) {
+    let thisDate = inputDateString.split("-");
+    let newDate = [thisDate[1], thisDate[2]].join("-");
+    return newDate;
   }
   useEffect(() => {
     const convertedTime = secondsToHhMmSs(todoObj.studyTime);
@@ -50,22 +65,21 @@ const TodoListTable = ({ userObj, todoObj }) => {
   };
   const onSubmit = async (event) => {
     event.preventDefault();
-    await dbService
-      .doc(`${userObj.uid}/${todoObj.id}`)
-      .update({
-        work: newWork,
-        subject: newSubject,
-        format: newFormat,
-        duedate: newDate,
-      });
+    await dbService.doc(`${userObj.uid}/${todoObj.id}`).update({
+      work: newWork,
+      subject: newSubject,
+      format: newFormat,
+      duedate: newDate,
+    });
     setEditing(false);
   };
   return (
     <tbody>
       {editing ? (
-        <tr>
-          <td>
+        <tr className="todolist-row">
+          <td className="todo-edit-task-box">
             <input
+              className="todo-edit-task"
               name="work"
               value={newWork}
               type="text"
@@ -74,8 +88,9 @@ const TodoListTable = ({ userObj, todoObj }) => {
               required
             />
           </td>
-          <td>
+          <td className="todo-edit-category-box">
             <input
+              className="todo-edit-category"
               name="subject"
               value={newSubject}
               type="text"
@@ -84,8 +99,9 @@ const TodoListTable = ({ userObj, todoObj }) => {
               required
             />
           </td>
-          <td>
+          <td className="todo-edit-format-box">
             <input
+              className="todo-edit-format"
               name="format"
               value={newFormat}
               type="text"
@@ -94,8 +110,9 @@ const TodoListTable = ({ userObj, todoObj }) => {
               required
             />
           </td>
-          <td>
+          <td className="todo-edit-due-box">
             <input
+              className="todo-edit-due"
               name="date"
               value={newDate}
               type="date"
@@ -103,30 +120,45 @@ const TodoListTable = ({ userObj, todoObj }) => {
               required
             />
           </td>
-          <td>{convertTime}</td>
+          <td className="todo-table-study-column">{convertTime}</td>
           <td>
-            <button onClick={onSubmit}>Update</button>
+            <button className="todolist-btn edit-btn" onClick={onSubmit}>
+              <FontAwesomeIcon icon={faCheckCircle} size="lg" />
+            </button>
           </td>
           <td>
-            <button onClick={toggleEditing}>Cancel</button>
+            <button className="todolist-btn cancel-btn" onClick={toggleEditing}>
+              <FontAwesomeIcon icon={faBan} size="lg" />
+            </button>
           </td>
         </tr>
       ) : (
         <>
-          <tr>
-            <td>{todoObj.work}</td>
-            <td>{todoObj.subject}</td>
-            <td>{todoObj.format}</td>
-            <td>{todoObj.duedate}</td>
-            <td>{convertTime}</td>
+          <tr className="todolist-row">
+            <td className="todo-table-task-column">{todoObj.work}</td>
+            <td className="todo-table-category-column">{todoObj.subject}</td>
+            <td className="todo-table-format-column">{todoObj.format}</td>
+            <td className="todo-table-due-column">
+              {deleteYear(todoObj.duedate)}
+            </td>
+            <td className="todo-table-study-column">{convertTime}</td>
             <td>
-              <button onClick={onDeleteClick}>Delete</button>
+              <button
+                className="todolist-btn cancel-btn"
+                onClick={onDeleteClick}
+              >
+                <FontAwesomeIcon icon={faTrash} size="lg" />
+              </button>
             </td>
             <td>
-              <button onClick={toggleEditing}>Edit</button>
+              <button className="todolist-btn edit-btn" onClick={toggleEditing}>
+                <FontAwesomeIcon icon={faEdit} size="lg" />
+              </button>
             </td>
             <td>
-              <button>Complete</button>
+              <button className="todolist-btn edit-btn">
+                <FontAwesomeIcon icon={faClipboardCheck} size="lg" />
+              </button>
             </td>
           </tr>
         </>

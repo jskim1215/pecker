@@ -1,0 +1,65 @@
+@import "https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css";
+
+@font-face {
+  font-family: "Spoqa Han Sans";
+  font-weight: 200;
+  src: url(../css/fonts/SpoqaHanSansNeo-Thin.woff2) format("woff2"),
+    url(../css/fonts/SpoqaHanSansNeo-Thin.woff) format("woff"),
+    url(../css/fonts/SpoqaHanSansNeo-Thin.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Spoqa Han Sans";
+  font-weight: 300;
+  src: url(../css/fonts/SpoqaHanSansNeo-Light.woff2) format("woff2"),
+    url(../css/fonts/SpoqaHanSansNeo-Light.woff) format("woff"),
+    url(../css/fonts/SpoqaHanSansNeo-Light.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Spoqa Han Sans";
+  font-weight: 400;
+  src: url(../css/fonts/SpoqaHanSansNeo-Regular.woff2) format("woff2"),
+    url(../css/fonts/SpoqaHanSansNeo-Regular.woff) format("woff"),
+    url(../css/fonts/SpoqaHanSansNeo-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Spoqa Han Sans";
+  font-weight: 500;
+  src: url(../css/fonts/SpoqaHanSansNeo-Bold.woff2) format("woff2"),
+    url(../css/fonts/SpoqaHanSansNeo-Bold.woff) format("woff"),
+    url(../css/fonts/SpoqaHanSansNeo-Bold.ttf) format("truetype");
+}
+
+html {
+  background: url(../static/gradient-5.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body,
+html {
+  font-family: "Spoqa Han Sans";
+  font-weight: 400;
+  color: #fff;
+  margin: 0;
+}
+
+input {
+  box-sizing: border-box;
+  appearance: none;
+  font-family: "Spoqa Han Sans";
+}
+
+button {
+  background-color: #fff;
+  border: none;
+  font-family: "Spoqa Han Sans";
+}
+
+.container {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,5 +1,13 @@
 import { dbService } from "fbase";
 import React, { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faUserClock,
+  faPlay,
+  faPause,
+  faRedo,
+} from "@fortawesome/free-solid-svg-icons";
+import "../css/Timer.css";
 
 const Timer = ({ userObj, todoLists }) => {
   const [displayTimer, setDisplayTimer] = useState("00:00:00");
@@ -100,27 +108,51 @@ const Timer = ({ userObj, todoLists }) => {
   return (
     <>
       <div>
-        <h1>This is For Timer</h1>
-        <h2>{displayTimer}</h2>
-        {!timerOn && <button onClick={onStart}>Start</button>}
-        {timerOn && <button onClick={onPause}>Pause</button>}
-        <button onClick={onReset}>Reset</button>
+        <div className="timer-title">
+          <FontAwesomeIcon icon={faUserClock} />
+          &nbsp;&nbsp;Study Timer
+        </div>
+        <div className="display-time">{displayTimer}</div>
+        <div className="timer-btns">
+          {!timerOn && (
+            <button className="timer-btn left-btn" onClick={onStart}>
+              <FontAwesomeIcon icon={faPlay} size="2x" />
+            </button>
+          )}
+          {timerOn && (
+            <button className="timer-btn left-btn" onClick={onPause}>
+              <FontAwesomeIcon icon={faPause} size="2x" />
+            </button>
+          )}
+          <button className="timer-btn right-btn" onClick={onReset}>
+            <FontAwesomeIcon icon={faRedo} size="2x" />
+          </button>
+        </div>
+
+        {timerOn ? (
+          <></>
+        ) : (
+          <div className="add-timer-container">
+            <form onSubmit={onSubmit}>
+              <select
+                className="timer-select-todolists"
+                onChange={onChange}
+                name="studyTime"
+              >
+                <option value="">--Please choose a task--</option>
+                {todoLists.map((doc) => (
+                  <option key={doc.id} value={doc.createdAt}>
+                    {doc.work}
+                  </option>
+                ))}
+              </select>
+              <button className="timer-select-btn" onSubmit={onSubmit}>
+                시간 추가
+              </button>
+            </form>
+          </div>
+        )}
       </div>
-      {timerOn ? (
-        <></>
-      ) : (
-        <form onSubmit={onSubmit}>
-          <select onChange={onChange} name="studyTime">
-            <option value="">--Please choose an subject--</option>
-            {todoLists.map((doc) => (
-              <option key={doc.id} value={doc.createdAt}>
-                {doc.work}
-              </option>
-            ))}
-          </select>
-          <input type="submit" value="Add Time" />
-        </form>
-      )}
     </>
   );
 };

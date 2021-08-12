@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AppRouter from "components/Router";
 import { authService, dbService } from "fbase";
+import "../css/App.css";
 
 function App() {
   const [studyMode, setStudyMode] = useState(null);
@@ -58,16 +59,18 @@ function App() {
 
   return (
     <>
-      {init ? (
-        <AppRouter
-          modeObj={modeObj}
-          refreshUser={refreshUser}
-          isLoggedIn={Boolean(userObj)}
-          userObj={userObj}
-        />
-      ) : (
-        "Initalizing..."
-      )}
+      <div className="initial-component">
+        {init ? (
+          <AppRouter
+            modeObj={modeObj}
+            refreshUser={refreshUser}
+            isLoggedIn={Boolean(userObj)}
+            userObj={userObj}
+          />
+        ) : (
+          "Initalizing..."
+        )}
+      </div>
     </>
   );
 }

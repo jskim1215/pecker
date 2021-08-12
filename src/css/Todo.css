@@ -1,0 +1,63 @@
+.todo-title {
+  font-size: xx-large;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.todo-filter-div {
+  text-align: center;
+}
+
+.todo-filter-btn {
+  border-radius: 7px;
+  font-weight: 500;
+  font-size: medium;
+  margin: 5px;
+}
+
+.todo-filter-btn:hover {
+  color: #fff;
+  background-color: #304ffe;
+  transition: all 1s ease;
+}
+
+/* todolists table 관련 */
+.todolists-table-container {
+  height: 310px;
+  overflow-x: hidden;
+  overflow-y: overlay;
+}
+.fixedHeader {
+  position: sticky;
+  top: 15px;
+}
+
+.todolist-table {
+  width: 720px;
+  margin-top: 20px;
+}
+
+.todolist-thead {
+  font-size: large;
+  font-weight: 500;
+  height: 30px;
+}
+
+.todolist-task-column {
+  width: 255px;
+}
+.todolist-category-column {
+  width: 140px;
+}
+.todolist-format-column {
+  width: 85px;
+}
+
+.todolist-due-column {
+  width: 60px;
+}
+
+.todolist-studytime-column {
+  width: 90px;
+}

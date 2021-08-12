@@ -1,0 +1,88 @@
+.todolist-btn {
+  width: 25px;
+  height: 28px;
+  color: #fff;
+  background-color: Transparent;
+}
+
+.cancel-btn:hover {
+  color: red;
+  transition: all 0.5s ease;
+}
+.edit-btn:hover {
+  color: #000;
+  transition: all 0.5s ease;
+}
+.todolist-row {
+  height: 28px;
+}
+/* for Task */
+.todo-table-task-column {
+  padding-left: 2px;
+  padding-right: 2px;
+  width: 255px;
+}
+.todo-edit-task-box {
+  width: 255px;
+  text-align: center;
+}
+.todo-edit-task {
+  border-radius: 7px;
+  border: none;
+  width: 255px;
+}
+
+/* for Category */
+.todo-table-category-column {
+  padding-left: 2px;
+  padding-right: 2px;
+  width: 140px;
+}
+.todo-edit-category-box {
+  width: 140px;
+  text-align: center;
+}
+.todo-edit-category {
+  border-radius: 7px;
+  border: none;
+  width: 140px;
+}
+/* for format */
+.todo-table-format-column {
+  padding-left: 2px;
+  padding-right: 2px;
+  text-align: center;
+  width: 85px;
+}
+.todo-edit-format-box {
+  width: 85px;
+  text-align: center;
+}
+.todo-edit-format {
+  border-radius: 7px;
+  border: none;
+  width: 85px;
+}
+/* for due-date */
+.todo-table-due-column {
+  padding-left: 2px;
+  padding-right: 2px;
+  text-align: center;
+  width: 60px;
+}
+.todo-edit-due-box {
+  width: 60px;
+  text-align: center;
+}
+.todo-edit-due {
+  border-radius: 7px;
+  border: none;
+  width: 60px;
+}
+/* for study-time */
+.todo-table-study-column {
+  padding-left: 2px;
+  padding-right: 2px;
+  text-align: center;
+  width: 90px;
+}

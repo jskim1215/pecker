@@ -23,7 +23,13 @@ const Auth = () => {
       <AuthForm />
       <div className="authBtns">
         <button className="authBtn" onClick={onSocialClick} name="google">
-          Continue with Google <FontAwesomeIcon icon={faGoogle} />
+          Continue with <span className="google-blue">G</span>
+          <span className="google-red">o</span>
+          <span className="google-yellow">o</span>
+          <span className="google-blue">g</span>
+          <span className="google-green">l</span>
+          <span className="google-red">e </span>
+          <FontAwesomeIcon icon={faGoogle} />
         </button>
         <button className="authBtn" onClick={onSocialClick} name="github">
           Continue with Github <FontAwesomeIcon icon={faGithub} />

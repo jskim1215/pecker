@@ -1,0 +1,43 @@
+.todo-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 55px;
+}
+
+.todo-assign-table {
+  text-align: right;
+  width: 100%;
+}
+
+.todo-assign-input {
+  border-radius: 7px;
+  height: 28px;
+  width: 150px;
+  border: none;
+}
+.todo-assign-column {
+  font-size: larger;
+  text-align: center;
+  font-weight: 500;
+}
+
+.todo-assign-row {
+  height: 35px;
+}
+
+.todo-assign-submit-btn {
+  font-size: medium;
+  width: 100px;
+  height: 28px;
+  margin-top: 10px;
+  font-weight: 500;
+  color: #304ffe;
+  border-radius: 7px;
+}
+
+.todo-assign-submit-btn:hover {
+  background-color: #304ffe;
+  color: #fff;
+  transition: all 1s ease;
+}

@@ -20,7 +20,24 @@
   padding: 10px 0px;
   font-size: 12px;
   text-align: center;
+  color: #fff;
   width: 150px;
-  background: #00b890;
+  background: #000;
   cursor: pointer;
+}
+
+span.google-blue {
+  color: #4285f4;
+}
+
+span.google-red {
+  color: #ea4335;
+}
+
+span.google-yellow {
+  color: #fbbc05;
+}
+
+span.google-green {
+  color: #34a853;
 }
