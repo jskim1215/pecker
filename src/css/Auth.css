@@ -25,6 +25,11 @@
   background: #000;
   cursor: pointer;
 }
+.authBtn:hover {
+  background-color: white;
+  color: black;
+  transition: all 1s ease;
+}
 
 span.google-blue {
   color: #4285f4;
