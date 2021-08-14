@@ -26,12 +26,13 @@
 .todolists-table-container {
   height: 310px;
   overflow-x: hidden;
-  overflow-y: overlay;
+  overflow-y: auto;
 }
-.fixedHeader {
+/* .fixedHeader {
   position: sticky;
-  top: 15px;
-}
+  top: 0;
+  z-index: 15;
+} */
 
 .todolist-table {
   width: 720px;

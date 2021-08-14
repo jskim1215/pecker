@@ -77,7 +77,7 @@ const Todo = ({ todoLists, userObj }) => {
                 </th>
               </tr>
             </thead>
-            <>
+            <tbody>
               {sortTodo.map((todoList) => (
                 <TodoListTable
                   userObj={userObj}
@@ -85,7 +85,7 @@ const Todo = ({ todoLists, userObj }) => {
                   todoObj={todoList}
                 />
               ))}
-            </>
+            </tbody>
           </table>
         </div>
       </div>

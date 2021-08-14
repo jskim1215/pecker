@@ -74,7 +74,7 @@ const TodoListTable = ({ userObj, todoObj }) => {
     setEditing(false);
   };
   return (
-    <tbody>
+    <>
       {editing ? (
         <tr className="todolist-row">
           <td className="todo-edit-task-box">
@@ -163,7 +163,7 @@ const TodoListTable = ({ userObj, todoObj }) => {
           </tr>
         </>
       )}
-    </tbody>
+    </>
   );
 };
 

@@ -25,7 +25,7 @@ const Home = ({ userObj, refreshUser }) => {
     <>
       <div className="home-container">
         <div className="first-inner-container">
-          <div className="first-box-container">
+          <div className="first-box-container box-container">
             <Profile
               className="home-profile"
               userObj={userObj}
@@ -33,15 +33,15 @@ const Home = ({ userObj, refreshUser }) => {
             />
             <TodoListAssign className="home-todo-assign" userObj={userObj} />
           </div>
-          <div className="second-box-container">
+          <div className="second-box-container box-container">
             <Timer userObj={userObj} todoLists={todoLists} />
           </div>
         </div>
         <div className="second-inner-container">
-          <div className="third-box-container">
+          <div className="third-box-container box-container">
             <Todo userObj={userObj} todoLists={todoLists} />
           </div>
-          <div className="fourth-box-container"></div>
+          <div className="fourth-box-container box-container"></div>
         </div>
       </div>
     </>
