@@ -2,6 +2,11 @@ input {
   width: 100px;
 }
 
+img {
+  width: 200px;
+  height: 150px;
+}
+
 .home-container {
   display: flex;
   justify-content: center;

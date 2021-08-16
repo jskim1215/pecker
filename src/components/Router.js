@@ -8,14 +8,14 @@ import {
 import Auth from "routes/Auth";
 import Home from "routes/Home";
 
-const AppRouter = ({ modeObj, refreshUser, isLoggedIn, userObj }) => {
+const AppRouter = ({ blog, refreshUser, isLoggedIn, userObj }) => {
   return (
     <Router>
       <Switch>
         {isLoggedIn ? (
           <>
             <Route exact path="/">
-              <Home userObj={userObj} refreshUser={refreshUser} />
+              <Home blog={blog} userObj={userObj} refreshUser={refreshUser} />
             </Route>
             <Redirect from="*" to="/" />
           </>

@@ -43,60 +43,62 @@ const TodoListAssign = ({ userObj }) => {
   return (
     <form className="todo-form-container" onSubmit={onSubmit}>
       <table className="todo-assign-table">
-        <tr className="todo-assign-row">
-          <td className="todo-assign-column">Task</td>
-          <td>
-            <input
-              className="todo-assign-input"
-              name="work"
-              value={work}
-              type="text"
-              placeholder="Task"
-              onChange={onChange}
-              required
-            />
-          </td>
-        </tr>
-        <tr className="todo-assign-row">
-          <td className="todo-assign-column">Category</td>
-          <td>
-            <input
-              className="todo-assign-input"
-              name="subject"
-              value={subject}
-              type="text"
-              placeholder="Category"
-              onChange={onChange}
-              required
-            />
-          </td>
-        </tr>
-        <tr className="todo-assign-row">
-          <td className="todo-assign-column">Format</td>
-          <td>
-            <input
-              className="todo-assign-input"
-              name="format"
-              value={format}
-              type="text"
-              placeholder="Format"
-              onChange={onChange}
-              required
-            />
-          </td>
-        </tr>
-        <tr className="todo-assign-row">
-          <td className="todo-assign-column">DueDate</td>
-          <td>
-            <input
-              className="todo-assign-input"
-              name="date"
-              type="date"
-              onChange={onChange}
-              required
-            />
-          </td>
-        </tr>
+        <tbody>
+          <tr className="todo-assign-row">
+            <td className="todo-assign-column">Task</td>
+            <td>
+              <input
+                className="todo-assign-input"
+                name="work"
+                value={work}
+                type="text"
+                placeholder="Task"
+                onChange={onChange}
+                required
+              />
+            </td>
+          </tr>
+          <tr className="todo-assign-row">
+            <td className="todo-assign-column">Category</td>
+            <td>
+              <input
+                className="todo-assign-input"
+                name="subject"
+                value={subject}
+                type="text"
+                placeholder="Category"
+                onChange={onChange}
+                required
+              />
+            </td>
+          </tr>
+          <tr className="todo-assign-row">
+            <td className="todo-assign-column">Format</td>
+            <td>
+              <input
+                className="todo-assign-input"
+                name="format"
+                value={format}
+                type="text"
+                placeholder="Format"
+                onChange={onChange}
+                required
+              />
+            </td>
+          </tr>
+          <tr className="todo-assign-row">
+            <td className="todo-assign-column">DueDate</td>
+            <td>
+              <input
+                className="todo-assign-input"
+                name="date"
+                type="date"
+                onChange={onChange}
+                required
+              />
+            </td>
+          </tr>
+        </tbody>
       </table>
       <button className="todo-assign-submit-btn" onSubmit={onSubmit}>
         <FontAwesomeIcon icon={faPlusSquare} /> 추가하기

@@ -5,9 +5,10 @@ import React, { useEffect, useState } from "react";
 import Timer from "components/Timer";
 import { dbService } from "fbase";
 import "../css/Home.css";
+import SelfAd from "components/SelfAd";
 
 // Todo.js만들어서 다 넣어버리기
-const Home = ({ userObj, refreshUser }) => {
+const Home = ({ blog, userObj, refreshUser }) => {
   const [todoLists, setTodoLists] = useState([]);
   useEffect(() => {
     dbService
@@ -41,7 +42,9 @@ const Home = ({ userObj, refreshUser }) => {
           <div className="third-box-container box-container">
             <Todo userObj={userObj} todoLists={todoLists} />
           </div>
-          <div className="fourth-box-container box-container"></div>
+          <div className="fourth-box-container box-container">
+            <SelfAd blog={blog} />
+          </div>
         </div>
       </div>
     </>
