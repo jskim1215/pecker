@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/pecker/static/css/main.83dba370.chunk.css",
+    "main.css": "/pecker/static/css/main.beb3080f.chunk.css",
     "main.js": "/pecker/static/js/main.b64166d4.chunk.js",
     "main.js.map": "/pecker/static/js/main.b64166d4.chunk.js.map",
     "runtime-main.js": "/pecker/static/js/runtime-main.c11162b5.js",
@@ -8,14 +8,14 @@
     "static/js/2.391b9801.chunk.js": "/pecker/static/js/2.391b9801.chunk.js",
     "static/js/2.391b9801.chunk.js.map": "/pecker/static/js/2.391b9801.chunk.js.map",
     "index.html": "/pecker/index.html",
-    "static/css/main.83dba370.chunk.css.map": "/pecker/static/css/main.83dba370.chunk.css.map",
+    "static/css/main.beb3080f.chunk.css.map": "/pecker/static/css/main.beb3080f.chunk.css.map",
     "static/js/2.391b9801.chunk.js.LICENSE.txt": "/pecker/static/js/2.391b9801.chunk.js.LICENSE.txt",
     "static/media/index.css": "/pecker/static/media/gradient-5.f1fdce19.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.c11162b5.js",
     "static/js/2.391b9801.chunk.js",
-    "static/css/main.83dba370.chunk.css",
+    "static/css/main.beb3080f.chunk.css",
     "static/js/main.b64166d4.chunk.js"
   ]
 }
