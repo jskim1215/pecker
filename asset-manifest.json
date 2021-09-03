@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/pecker/static/css/main.fb5105bf.chunk.css",
-    "main.js": "/pecker/static/js/main.0f9365d7.chunk.js",
-    "main.js.map": "/pecker/static/js/main.0f9365d7.chunk.js.map",
+    "main.css": "/pecker/static/css/main.295dd195.chunk.css",
+    "main.js": "/pecker/static/js/main.840b0575.chunk.js",
+    "main.js.map": "/pecker/static/js/main.840b0575.chunk.js.map",
     "runtime-main.js": "/pecker/static/js/runtime-main.c11162b5.js",
     "runtime-main.js.map": "/pecker/static/js/runtime-main.c11162b5.js.map",
-    "static/js/2.391b9801.chunk.js": "/pecker/static/js/2.391b9801.chunk.js",
-    "static/js/2.391b9801.chunk.js.map": "/pecker/static/js/2.391b9801.chunk.js.map",
+    "static/js/2.ef032ea0.chunk.js": "/pecker/static/js/2.ef032ea0.chunk.js",
+    "static/js/2.ef032ea0.chunk.js.map": "/pecker/static/js/2.ef032ea0.chunk.js.map",
     "index.html": "/pecker/index.html",
-    "static/css/main.fb5105bf.chunk.css.map": "/pecker/static/css/main.fb5105bf.chunk.css.map",
-    "static/js/2.391b9801.chunk.js.LICENSE.txt": "/pecker/static/js/2.391b9801.chunk.js.LICENSE.txt",
+    "static/css/main.295dd195.chunk.css.map": "/pecker/static/css/main.295dd195.chunk.css.map",
+    "static/js/2.ef032ea0.chunk.js.LICENSE.txt": "/pecker/static/js/2.ef032ea0.chunk.js.LICENSE.txt",
     "static/media/index.css": "/pecker/static/media/gradient-5.f1fdce19.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.c11162b5.js",
-    "static/js/2.391b9801.chunk.js",
-    "static/css/main.fb5105bf.chunk.css",
-    "static/js/main.0f9365d7.chunk.js"
+    "static/js/2.ef032ea0.chunk.js",
+    "static/css/main.295dd195.chunk.css",
+    "static/js/main.840b0575.chunk.js"
   ]
 }
